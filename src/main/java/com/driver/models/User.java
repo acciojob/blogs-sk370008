@@ -35,6 +35,14 @@ public class User {
         this.lastName = lastName;
     }
 
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
     public String getUsername(){
         return username;
     }
@@ -68,5 +76,9 @@ public class User {
 
     public List<Blog> getBlogs(){
         return blogs;
+    }
+
+    public void setBlogs(List<Blog> blogs){
+        this.blogs = blogs;
     }
 }

@@ -37,6 +37,14 @@ public class Blog{
         this.pubDate = pubDate;
     }
 
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -53,7 +61,27 @@ public class Blog{
         this.content = content;
     }
 
+    public Date getPubDate(){
+        return pubDate;
+    }
+
+    public void setPubDate(Date date){
+        this.pubDate = pubDate;
+    }
+
     public List<Image> getImages(){
         return images;
+    }
+
+    public void setImages(List<Image> images){
+        this.images = images;
+    }
+
+
+    public User getUser(){
+        return user;
+    }
+    public void setUser(User user){
+        this.user = user;
     }
 }
