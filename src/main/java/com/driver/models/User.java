@@ -74,11 +74,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public List<Blog> getBlogs(){
+    public List<Blog> getBlogList(){
         return blogList;
     }
 
-    public void setBlogs(List<Blog> blogs){
+    public void setBlogList(List<Blog> blogs){
         this.blogList = blogs;
     }
 }

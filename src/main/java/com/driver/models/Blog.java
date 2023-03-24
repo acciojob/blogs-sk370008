@@ -69,11 +69,11 @@ public class Blog{
         this.pubDate = pubDate;
     }
 
-    public List<Image> getImages(){
+    public List<Image> getImageList(){
         return imageList;
     }
 
-    public void setImages(List<Image> images){
+    public void setImageList(List<Image> images){
         this.imageList = images;
     }
 
