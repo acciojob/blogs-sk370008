@@ -2,6 +2,7 @@ package com.driver.services;
 
 import com.driver.models.*;
 import com.driver.repositories.*;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,12 +36,15 @@ public class ImageService {
         String[] screeDimensionArr = screenDimensions.split("X");
         int screenDimensionsInt = Integer.parseInt(screeDimensionArr[0]) * Integer.parseInt(screeDimensionArr[1]);
 
+
         Image image = imageRepository2.findById(id).get();
 
         String imageDimensions = image.getDimensions();
         String[] imageDimensionArr = imageDimensions.split("X");
         int imageDimensionsInt = Integer.parseInt(imageDimensionArr[0]) * Integer.parseInt(imageDimensionArr[1]);
-        int noOfImages = screenDimensionsInt/imageDimensionsInt;
+        int dimAtZero = Integer.parseInt(screeDimensionArr[0])/Integer.parseInt(imageDimensionArr[0]);
+        int dimAtOne = Integer.parseInt(screeDimensionArr[1])/Integer.parseInt(imageDimensionArr[0]);
+        int noOfImages = dimAtOne + dimAtZero;
         return noOfImages;
     }
 
