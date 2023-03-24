@@ -1,5 +1,6 @@
 package com.driver.models;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -18,7 +19,7 @@ public class Blog{
 
     private String content;
 
-    @CreatedDate
+    @CreationTimestamp
     Date pubDate;
 
     @ManyToOne
@@ -28,13 +29,14 @@ public class Blog{
     @OneToMany(mappedBy = "blog",cascade = CascadeType.ALL)
     List<Image> imageList = new ArrayList<>();
 
+
     public Blog(){}
 
     public Blog(int id,String title,String content,Date pubDate){
         this.id = id;
         this.title = title;
         this.content = content;
-        this.pubDate = pubDate;
+        this.pubDate = new Date();
     }
 
     public int getId(){
