@@ -20,7 +20,7 @@ public class User {
     private String lastName;
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    List<Blog> blogs = new ArrayList<>();
+    List<Blog> blogList = new ArrayList<>();
 
 
     public User(){
@@ -75,10 +75,10 @@ public class User {
     }
 
     public List<Blog> getBlogs(){
-        return blogs;
+        return blogList;
     }
 
     public void setBlogs(List<Blog> blogs){
-        this.blogs = blogs;
+        this.blogList = blogs;
     }
 }
