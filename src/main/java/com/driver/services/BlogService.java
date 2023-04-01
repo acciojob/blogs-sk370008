@@ -26,14 +26,13 @@ public class BlogService {
 
 
         User user = userRepository1.findById(userId).get();
-        Blog blog = new Blog();
-        blog.setTitle(title);
-        blog.setContent(content);
-        blog.setUser(user);
+        Blog blog = new Blog(title,content, new Date(), user);
+//        blog.setTitle(title);
+//        blog.setContent(content);
+//        blog.setUser(user);
         List<Blog> blogList = user.getBlogList();
         blogList.add(blog);
-        userRepository1.save(user);
-
+        User savedUser = userRepository1.save(user);
         return blog;
     }
 

@@ -30,13 +30,20 @@ public class Blog{
     List<Image> imageList = new ArrayList<>();
 
 
+    public Blog(String title, String content, Date pubDate, User user) {
+        this.title = title;
+        this.content = content;
+        this.pubDate = pubDate;
+        this.user = user;
+    }
+
     public Blog(){}
 
     public Blog(int id,String title,String content,Date pubDate){
         this.id = id;
         this.title = title;
         this.content = content;
-        this.pubDate = new Date();
+        this.pubDate = pubDate;
     }
 
     public int getId(){
