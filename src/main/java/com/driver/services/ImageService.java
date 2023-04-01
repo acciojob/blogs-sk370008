@@ -1,6 +1,5 @@
 package com.driver.services;
 
-import com.driver.Exception.BlogNotFoundException;
 import com.driver.models.*;
 import com.driver.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,21 +15,13 @@ public class ImageService {
     @Autowired
     ImageRepository imageRepository2;
 
-    public Image addImage(Integer blogId, String description, String dimensions) throws BlogNotFoundException {
+    public Image addImage(Integer blogId, String description, String dimensions){
         //add an image to the blog
-        Blog blog;
-        try{
-            blog = blogRepository2.findById(blogId).get();
-        }catch (Exception e){
-            throw new BlogNotFoundException("Invalid blog id");
-        }
-
-
+        Blog blog = blogRepository2.findById(blogId).get();
         Image image = new Image();
         image.setDescription(description);
         image.setDimensions(dimensions);
         image.setBlog(blog);
-//        imageRepository2.save(image);
         List<Image> imageList = blog.getImageList();
         imageList.add(image);
         blogRepository2.save(blog);
