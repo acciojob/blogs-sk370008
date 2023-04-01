@@ -22,7 +22,7 @@ public class ImageService {
         image.setDescription(description);
         image.setDimensions(dimensions);
         image.setBlog(blog);
-        imageRepository2.save(image);
+//        imageRepository2.save(image);
         List<Image> imageList = blog.getImageList();
         imageList.add(image);
         blogRepository2.save(blog);
