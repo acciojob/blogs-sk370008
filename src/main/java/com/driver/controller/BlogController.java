@@ -17,12 +17,20 @@ public class BlogController {
     BlogService blogService;
 
     @PostMapping("/create")
-    public ResponseEntity<Blog> createBlog(@RequestParam Integer userId ,
+    public ResponseEntity createBlog(@RequestParam Integer userId ,
                                      @RequestParam String title,
                                      @RequestParam String content){
         // Create a blog and add it under given user
 
-        Blog blog = blogService.createAndReturnBlog(userId,title,content);
+        Blog blog;
+
+        try{
+            blog = blogService.createAndReturnBlog(userId,title,content);
+        }catch (Exception e){
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
+        }
+
+
         return new ResponseEntity<>(blog,HttpStatus.CREATED);
     }
 
