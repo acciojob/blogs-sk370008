@@ -1,6 +1,5 @@
 package com.driver.services;
 
-import com.driver.DTO.BlogResponseDto;
 import com.driver.models.Blog;
 import com.driver.models.Image;
 import com.driver.models.User;
