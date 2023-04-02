@@ -14,12 +14,7 @@ public class UserService {
     UserRepository userRepository3;
 
     public User createUser(String username, String password){
-        User newuser = new User();
-        newuser.setUsername(username);
-        newuser.setPassword(password);
-        newuser.setFirstName("test");
-        newuser.setLastName("test");
-        newuser.setBlogList(new ArrayList<>());
+        User newuser = new User(username,password);
         userRepository3.save(newuser);
         return newuser;
     }

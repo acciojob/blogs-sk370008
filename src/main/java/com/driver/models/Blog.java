@@ -33,7 +33,7 @@ public class Blog{
     public Blog() {
     }
 
-    public Blog(String title, String content, User user) {
+    public Blog(User user, String title, String content) {
         this.title = title;
         this.content = content;
         this.user = user;
@@ -47,6 +47,8 @@ public class Blog{
         this.user = user;
         this.imageList = imageList;
     }
+
+
 
     public int getId(){
         return id;
