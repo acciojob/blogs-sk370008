@@ -1,7 +1,6 @@
 package com.driver.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -32,13 +31,6 @@ public class User {
         this.password = password;
     }
 
-    public User(int id, String username, String password, String firstName, String lastName){
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
 
     public User(int id, String username, String password, String firstName, String lastName, List<Blog> blogList) {
         this.id = id;
