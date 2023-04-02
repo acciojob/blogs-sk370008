@@ -32,7 +32,7 @@ public class BlogService {
         blog.setUser(user);
         List<Blog> blogList = user.getBlogList();
         blogList.add(blog);
-        blog.setImageList(new ArrayList<>());
+        user.setBlogList(blogList);
         User savedUser = userRepository1.save(user);
         Blog blog1 = savedUser.getBlogList().get(savedUser.getBlogList().size()-1);
         return blog1;
