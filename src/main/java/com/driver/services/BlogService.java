@@ -26,14 +26,25 @@ public class BlogService {
 
 
         User user = userRepository1.findById(userId).get();
-        Blog blog = new Blog(title,content, new Date(), user);
-//        blog.setTitle(title);
-//        blog.setContent(content);
-//        blog.setUser(user);
+        Blog blog = new Blog();
+        blog.setTitle(title);
+        blog.setContent(content);
+        blog.setUser(user);
         List<Blog> blogList = user.getBlogList();
         blogList.add(blog);
         User savedUser = userRepository1.save(user);
-        return blog;
+        Blog blog1 = savedUser.getBlogList().get(savedUser.getBlogList().size()-1);
+        return blog1;
+
+
+//        User user =  userRepository1.findById(userId).get();
+//        Blog blog = new Blog();
+//        blog.setTitle(title);
+//        blog.setContent(content);
+//        blog.setUser(user);
+//        blog.setId(blog.getId());
+//        blog.setImageList(new ArrayList<>());
+//        return blog;
     }
 
     public void deleteBlog(int blogId){
