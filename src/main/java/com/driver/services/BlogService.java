@@ -28,9 +28,6 @@ public class BlogService {
         blog.setPubDate(new Date());
         userRepository1.save(user);
         user.getBlogList().add(blog);
-        if(blog == null){
-            return null;
-        }
         return blog;
     }
 

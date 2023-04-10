@@ -19,6 +19,7 @@ public class User {
     private String lastName = "test";
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @JoinColumn
     List<Blog> blogList;
 
 
