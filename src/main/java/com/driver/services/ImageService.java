@@ -70,7 +70,7 @@ public class ImageService {
 //            throw new Exception();
 //        }
         Blog blog = blogRepository2.findById(blogId).get();
-        Image image = new Image(description,dimensions,blog);
+        Image image = new Image(blog,description,dimensions);
         blog.getImageList().add(image);
         blogRepository2.save(blog);
         return image;
